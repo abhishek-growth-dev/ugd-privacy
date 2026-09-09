@@ -26,10 +26,10 @@ if($row){$demoId=(int)$row['id'];$u=$conn->prepare('UPDATE users SET name=?,pass
 else{$i=$conn->prepare('INSERT INTO users(name,email,password) VALUES(?,?,?)');$i->bind_param('sss',$name,$email,$hash);$i->execute();$demoId=(int)$i->insert_id;}
 
 $cars=[
- ['Ferrari 488 GTB','Ferrari','488 GTB',2020,'Rosso Corsa','Petrol',25000000,'Italian mid-engine performance car with a twin-turbo V8 and a beautifully balanced chassis.','https://images.unsplash.com/photo-1592198084033-aade902d1aae?auto=format&fit=crop&w=1600&q=86'],
- ['BMW M4 Competition','BMW','M4 Competition',2022,'Portimao Blue','Petrol',14500000,'High-performance coupe with everyday usability, sharp handling and a strong road presence.','https://images.unsplash.com/photo-1670727229851-79aee0a1d1a9?auto=format&fit=crop&w=1600&q=86'],
- ['Toyota Fortuner Legender','Toyota','Fortuner Legender',2023,'Pearl White','Diesel',5200000,'Premium touring SUV with strong road presence, long-distance comfort and dependable capability.','https://images.unsplash.com/photo-1666739339626-0b4cdec04a24?auto=format&fit=crop&w=1600&q=86'],
- ['Tesla Model 3','Tesla','Model 3',2024,'Pearl White','Electric',6000000,'Modern electric sedan with instant torque, minimalist design and an effortless daily-driving experience.','https://images.unsplash.com/photo-1606016159991-dfe4f2746ad5?auto=format&fit=crop&w=1600&q=86']
+ ['Ferrari 488 GTB','Ferrari','488 GTB',2020,'Rosso Corsa','Petrol',25000000,'Italian mid-engine performance car with a twin-turbo V8 and a beautifully balanced chassis.','https://commons.wikimedia.org/wiki/Special:Redirect/file/2017_Ferrari_488_GTB_Automatic_3.9_Front.jpg?width=1600'],
+ ['BMW M4 Competition','BMW','M4 Competition',2022,'Tanzanite Blue','Petrol',14500000,'High-performance coupe with everyday usability, sharp handling and a strong road presence.','https://commons.wikimedia.org/wiki/Special:Redirect/file/BMW_G82_M4_Competition_Tanzanite_Blue_Metallic_%2814%29.jpg?width=1600'],
+ ['Toyota Fortuner Legender','Toyota','Fortuner Legender',2023,'Silver Metallic','Diesel',5200000,'Premium touring SUV with strong road presence, long-distance comfort and dependable capability.','https://commons.wikimedia.org/wiki/Special:Redirect/file/Toyota_Fortuner_GUN166_Legender_2.8_Q_4x2_Silver_Metallic_02.jpg?width=1600'],
+ ['Tesla Model 3','Tesla','Model 3',2024,'Stealth Grey','Electric',6000000,'Modern electric sedan with instant torque, minimalist design and an effortless daily-driving experience.','https://commons.wikimedia.org/wiki/Special:Redirect/file/Tesla_model_3_grey_%281%29.jpg?width=1600']
 ];
 
 foreach($cars as $c){
