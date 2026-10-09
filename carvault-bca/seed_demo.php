@@ -40,3 +40,11 @@ foreach($cars as $c){
 }
 
 echo "CarVault demo account and collection ready.\n";
+
+// Only the existing, explicitly fictional demo inventory is public by default.
+require_once __DIR__.'/reservations.php';
+reservationSchema($conn);
+foreach ($cars as $demoCar) {
+    $name=$demoCar[0];
+    rq($conn, 'INSERT IGNORE INTO car_listings(car_id,is_listed,is_demo) SELECT id,1,1 FROM cars WHERE user_id=? AND car_name=?', 'is', $demoId, $name);
+}

@@ -1,5 +1,5 @@
 <?php
-$file = '/app/index.php';
+$file = __DIR__ . '/index.php';
 $src = file_get_contents($file);
 
 $replacements = [
